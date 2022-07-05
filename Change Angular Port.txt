@@ -1,0 +1,43 @@
+How To Change Angular Port (ng serve port) number from 4200 to other
+
+There are two ways we can change the default angular port number from 4200 to other number.
+
+Using ng serve --port flag.
+Specifying default port number in project’s Angular.json file.
+By default Angular CLI ng serve command uses port 4200 to run the application.
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+Using ng serve –port flag.
+This is pretty simple method to change the default port number in Angular application.
+
+While running project, with ng serve command, use --port flag followed by port number.
+
+ng serve --port 3200
+Everytime we have to pass port number to ng serve command using --port flag.
+
+** Angular Live Development Server is listening on localhost:3200, open your browser on http://localhost:3200/ **
+Adding default port number in project’s angular.json file.
+In latest versions of Angular i.e., Angular 10+ we can configure the default port in project’s angular.json file.
+
+Here are the steps to add default port number in Angular applications.
+
+Navigate to project route folder.
+Open “angular.json” file.
+Search for “serve” configuration and it contains “options” cofig.
+Add “port”:3001(or any other number) property inside options.
+ "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "latest-angular:build",
+			"port": 3001
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "latest-angular:build:production"
+            }
+          }
+        }
+		
+Now if we run ng serve command, the project automatically uses 3001 port number specified in angular.json file.
+
+** Angular Live Development Server is listening on localhost:3001, open your browser on http://localhost:3001/ **

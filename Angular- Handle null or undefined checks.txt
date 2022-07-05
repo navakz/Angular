@@ -1,0 +1,5 @@
+TypeScript is super set of JavaScript. So we can simply use if condition to do null or undefined checks.
+
+Often people thinks that there will be a TypeScript utility function to do the job. But that’s not the case here.
+
+If we pass null,undefined,0,false,“”,NaN values to the if condition it evaluates to false.
